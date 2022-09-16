@@ -6,7 +6,7 @@ import org.neo4j.procedure.*;
 
 import java.util.stream.Stream;
 
-public class UpdateUmbrellaSpreadMtrigger {
+public class LongArrayProcedure {
 
 
     @Context
@@ -16,10 +16,10 @@ public class UpdateUmbrellaSpreadMtrigger {
     public Log log;
 
 
-    @Procedure(value = "org.enkelt.procedures.updateUmbrellaSpreadMtrigger",
-            name = "org.enkelt.procedures.updateUmbrellaSpreadMtrigger", mode = Mode.WRITE)
+    @Procedure(value = "org.example.longArrayProcedure",
+            name = "org.longArrayProcedure", mode = Mode.WRITE)
     @Description("Description")
-    public Stream<LongArrayRecord> updateUmbrellaSpreadMtrigger(@Name("Node") Node mtrigger) {
+    public Stream<LongArrayRecord> longArrayProcedure() {
         long[] longArray = new long[1];
         return Stream.of(new LongArrayRecord(longArray));
     }
